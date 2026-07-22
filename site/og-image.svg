@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="g" width="55" height="55" patternUnits="userSpaceOnUse">
+      <path d="M 55 0 L 0 0 0 55" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="gl1" cx="15%" cy="90%" r="40%">
+      <stop offset="0%" stop-color="#F5820D" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F5820D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0D1B3E"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#gl1)"/>
+  <rect x="0" y="0" width="5" height="630" fill="#F5820D"/>
+  <g transform="translate(68,118)">
+    <rect width="74" height="74" rx="12" fill="#0D1B3E" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <polyline points="10,62 10,16 37,44 64,16 64,62" fill="none" stroke="white" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="30" y="46" width="14" height="16" rx="2" fill="#F5820D"/>
+  </g>
+  <text x="162" y="178" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1.5">Maestros del Hogar</text>
+  <text x="68" y="226" font-family="-apple-system,sans-serif" font-size="19" font-weight="700" fill="#F5820D" letter-spacing="5">GASFITER  ·  ELECTRICISTA  ·  CERRAJERO</text>
+  <rect x="68" y="250" width="440" height="1" fill="rgba(255,255,255,0.12)"/>
+  <text x="68" y="294" font-family="-apple-system,sans-serif" font-size="21" fill="rgba(255,255,255,0.70)">Directorio de técnicos a domicilio en Santiago</text>
+  <text x="68" y="360" font-family="-apple-system,sans-serif" font-size="16" fill="rgba(255,255,255,0.45)">✓  Urgencia 24 horas</text>
+  <text x="68" y="392" font-family="-apple-system,sans-serif" font-size="16" fill="rgba(255,255,255,0.45)">✓  Presupuesto acordado antes de empezar</text>
+  <text x="68" y="424" font-family="-apple-system,sans-serif" font-size="16" fill="rgba(255,255,255,0.45)">✓  Cobertura en 15 comunas de Santiago</text>
+  <rect x="68" y="528" width="262" height="44" rx="22" fill="rgba(245,130,13,0.14)" stroke="rgba(245,130,13,0.30)" stroke-width="1.5"/>
+  <text x="199" y="556" font-family="-apple-system,sans-serif" font-size="16" font-weight="600" fill="#F5820D" text-anchor="middle">maestrosdelhogar.cl</text>
+  <g transform="translate(680,100)">
+    <rect width="450" height="110" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+    <rect width="4" height="110" rx="2" fill="#F5820D" opacity="0.7"/>
+    <text x="28" y="58" font-size="38">🔧</text>
+    <text x="80" y="52" font-family="-apple-system,sans-serif" font-size="22" font-weight="700" fill="white">Gasfiter</text>
+    <text x="80" y="76" font-family="-apple-system,sans-serif" font-size="14" fill="rgba(255,255,255,0.44)">Fugas · Calefont · Certificación SEC</text>
+    <rect y="128" width="450" height="110" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+    <rect y="128" width="4" height="110" rx="2" fill="#F5820D" opacity="0.7"/>
+    <text x="28" y="186" font-size="38">⚡</text>
+    <text x="80" y="180" font-family="-apple-system,sans-serif" font-size="22" font-weight="700" fill="white">Electricista</text>
+    <text x="80" y="204" font-family="-apple-system,sans-serif" font-size="14" fill="rgba(255,255,255,0.44)">Tableros · Cortocircuitos · Certificado SEC</text>
+    <rect y="256" width="450" height="110" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+    <rect y="256" width="4" height="110" rx="2" fill="#F5820D" opacity="0.7"/>
+    <text x="28" y="314" font-size="38">🔑</text>
+    <text x="80" y="308" font-family="-apple-system,sans-serif" font-size="22" font-weight="700" fill="white">Cerrajero</text>
+    <text x="80" y="332" font-family="-apple-system,sans-serif" font-size="14" fill="rgba(255,255,255,0.44)">Aperturas · Chapas · Autos</text>
+  </g>
+</svg>

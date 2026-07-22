@@ -1,20 +1,7 @@
 /* ============================================================
-   MAESTROS DEL HOGAR — main.js v1.1
-   Incluye GA4 · G-Q5KH4RSPSY
+   MAESTROS DEL HOGAR — main.js v1.0
+   JavaScript compartido para todas las páginas del sitio
    ============================================================ */
-
-/* ── GA4 — carga inmediata antes que cualquier otra cosa ── */
-(function () {
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q5KH4RSPSY';
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-Q5KH4RSPSY');
-})();
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -65,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   /* ── COUNTER ANIMATION ── */
@@ -77,27 +65,39 @@ document.addEventListener('DOMContentLoaded', () => {
     let current = 0;
     const timer = setInterval(() => {
       current += increment;
-      if (current >= target) { current = target; clearInterval(timer); }
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
       el.textContent = Math.floor(current) + suffix;
     }, step);
   }
+
   const counterObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) { runCounter(e.target); counterObs.unobserve(e.target); }
+      if (e.isIntersecting) {
+        runCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
     });
   }, { threshold: 0.5 });
+
   document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
   /* ── FAQ ACCORDION ── */
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.contains('open');
+      const item    = btn.closest('.faq-item');
+      const answer  = item.querySelector('.faq-answer');
+      const isOpen  = item.classList.contains('open');
+
+      // Cerrar todos
       document.querySelectorAll('.faq-item.open').forEach(i => {
         i.classList.remove('open');
         i.querySelector('.faq-answer').style.maxHeight = '0';
       });
+
+      // Abrir el clickeado si estaba cerrado
       if (!isOpen) {
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -105,20 +105,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── SMOOTH SCROLL ── */
+  /* ── SMOOTH SCROLL PARA ANCLAS ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
 
-  /* ── NETLIFY FORM ── */
-  const form    = document.getElementById('contact-form');
+  /* ── NETLIFY FORM SUCCESS ── */
+  const form = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
   if (form && success) {
     form.addEventListener('submit', async (e) => {
@@ -126,22 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = form.querySelector('.form-submit');
       btn.textContent = 'Enviando...';
       btn.disabled = true;
+
       try {
-        const res = await fetch('/', {
+        const data = new FormData(form);
+        const res  = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString(),
+          body: new URLSearchParams(data).toString(),
         });
         if (res.ok) {
           form.style.display = 'none';
           success.style.display = 'block';
-          if (window.gtag) {
-            gtag('event', 'generate_lead', {
-              event_category: 'formulario',
-              event_label: form.getAttribute('name') || 'contacto',
-            });
-          }
-        } else { throw new Error(); }
+        } else {
+          throw new Error();
+        }
       } catch {
         btn.textContent = 'Error al enviar — intenta de nuevo';
         btn.disabled = false;
