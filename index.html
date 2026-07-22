@@ -1,526 +1,150 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maestros del Hogar — Gasfiter, Electricista y Cerrajero en Santiago</title>
-<meta name="description" content="Encuentra gasfiter, electricista y cerrajero a domicilio en Santiago. Servicio de urgencia 24 horas en todas las comunas. Técnicos verificados.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.maestrosdelhogar.cl/">
-<meta property="og:title" content="Maestros del Hogar — Servicios técnicos a domicilio en Santiago">
-<meta property="og:description" content="Encuentra gasfiter, electricista y cerrajero a domicilio en Santiago. Urgencia 24 horas.">
-<meta property="og:url" content="https://www.maestrosdelhogar.cl/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_CL">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Maestros del Hogar",
-  "description": "Directorio de gasfiteros, electricistas y cerrajeros a domicilio en Santiago de Chile",
-  "url": "https://www.maestrosdelhogar.cl",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Santiago",
-    "addressRegion": "Región Metropolitana",
-    "addressCountry": "CL"
-  },
-  "areaServed": ["Santiago","Providencia","Ñuñoa","Macul","La Florida","Puente Alto","Peñalolén","Recoleta","Estación Central","Las Condes","Maipú","Vitacura","San Miguel","La Reina","Lo Barnechea"],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios técnicos del hogar",
-    "itemListElement": [
-      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Gasfiter a domicilio Santiago"}},
-      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Electricista a domicilio Santiago"}},
-      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Cerrajero a domicilio Santiago"}}
-    ]
-  }
-}
-</script>
-
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#0D1B3E;
-  --navy-mid:#1B3A6B;
-  --orange:#F5820D;
-  --orange-dark:#D96D00;
-  --orange-glow:rgba(245,130,13,0.22);
-  --white:#FFFFFF;
-  --gray-bg:#F7F7F5;
-  --gray-mid:#E8E8E4;
-  --text-muted:#888;
-  --text-dark:#1A1A1A;
-  --glass:rgba(255,255,255,0.06);
-  --glass-border:rgba(255,255,255,0.12);
-  --radius:10px;
-  --radius-lg:16px;
-  --ease:cubic-bezier(0.4,0,0.2,1);
-}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text-dark);background:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-
-@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes pulseRing{0%{transform:scale(1);opacity:1}100%{transform:scale(1.8);opacity:0}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
-/* HEADER */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:background .3s var(--ease),box-shadow .3s var(--ease)}
-.site-header.scrolled{background:rgba(13,27,62,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
-.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-size:19px;font-weight:700;color:var(--white);letter-spacing:-.3px}
-.logo span{color:var(--orange)}
-.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-.nav-links a{color:rgba(255,255,255,.8);font-size:14px;padding:6px 12px;border-radius:var(--radius);transition:all .2s}
-.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
-.nav-cta{background:var(--orange)!important;color:var(--white)!important;padding:8px 18px!important;font-weight:600!important}
-.nav-cta:hover{background:var(--orange-dark)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
-.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s var(--ease)}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(13,27,62,.98);backdrop-filter:blur(20px);padding:20px 24px 32px;z-index:99;opacity:0;transform:translateY(-8px);transition:all .25s var(--ease)}
-.mobile-menu.open{display:block;opacity:1;transform:translateY(0)}
-.mobile-menu a{display:block;color:rgba(255,255,255,.85);font-size:17px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.mobile-menu a.cta-mob{border:none;color:var(--orange);font-weight:600;margin-top:8px}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 24px 96px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(-45deg,#0A1428,#1B3A6B,#0F2045,#16305A);background-size:400% 400%;animation:gradientShift 14s ease infinite}
-.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:700px;height:320px;background:radial-gradient(ellipse at center,rgba(245,130,13,.14) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:1;max-width:820px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,130,13,.14);border:1px solid rgba(245,130,13,.3);color:var(--orange);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:26px;animation:fadeUp .5s ease both}
-.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);position:relative}
-.pulse-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--orange);animation:pulseRing 1.5s ease-out infinite}
-.hero h1{font-size:clamp(34px,6vw,62px);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;animation:fadeUp .5s .1s ease both}
-.hero h1 em{font-style:normal;color:var(--orange)}
-.hero p{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 36px;animation:fadeUp .5s .2s ease both}
-.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:60px;animation:fadeUp .5s .3s ease both}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);font-size:15px;font-weight:600;padding:14px 26px;border-radius:var(--radius);transition:all .25s var(--ease)}
-.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 8px 28px var(--orange-glow)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--white);font-size:15px;font-weight:500;padding:14px 26px;border-radius:var(--radius);transition:all .25s var(--ease)}
-.btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
-.hero-stats{display:flex;justify-content:center;flex-wrap:wrap;animation:fadeUp .5s .4s ease both}
-.stat-item{padding:0 28px;border-right:1px solid rgba(255,255,255,.1);text-align:center}
-.stat-item:last-child{border-right:none}
-.stat-num{font-size:32px;font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-1px}
-.stat-lbl{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em;margin-top:2px}
-.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:11px;letter-spacing:.1em;display:flex;flex-direction:column;align-items:center;gap:5px;animation:float 2.5s ease-in-out infinite}
-.scroll-hint svg{width:16px;height:16px;fill:rgba(255,255,255,.3)}
-
-/* SERVICES */
-.services{padding:96px 24px;background:var(--gray-bg)}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-header{margin-bottom:48px}
-.section-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
-.section-title{font-size:clamp(24px,3.5vw,36px);font-weight:800;letter-spacing:-.5px;margin-bottom:10px}
-.section-desc{font-size:15px;color:var(--text-muted);max-width:460px}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.service-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;border:1px solid var(--gray-mid);transition:all .3s var(--ease);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--orange-glow) 0%,transparent 55%);opacity:0;transition:opacity .3s var(--ease)}
-.service-card:hover{transform:translateY(-6px);border-color:rgba(245,130,13,.5);box-shadow:0 20px 48px rgba(245,130,13,.1),0 4px 16px rgba(0,0,0,.05)}
-.service-card:hover::before{opacity:1}
-.svc-icon{width:58px;height:58px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;transition:all .3s var(--ease);position:relative;z-index:1}
-.service-card:hover .svc-icon{background:var(--orange);transform:scale(1.06)}
-.service-card h2{font-size:20px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px;position:relative;z-index:1}
-.service-card p{font-size:14px;color:var(--text-muted);margin-bottom:20px;line-height:1.65;position:relative;z-index:1}
-.communes-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:24px;position:relative;z-index:1}
-.commune-tag{font-size:11px;padding:3px 9px;border-radius:20px;background:var(--gray-bg);color:#555;border:1px solid var(--gray-mid);transition:all .2s}
-.service-card:hover .commune-tag{background:rgba(245,130,13,.08);border-color:rgba(245,130,13,.25);color:var(--orange-dark)}
-.svc-link{display:inline-flex;align-items:center;gap:6px;color:var(--navy-mid);font-size:14px;font-weight:600;transition:all .2s;position:relative;z-index:1}
-.svc-arrow{transition:transform .22s var(--ease)}
-.service-card:hover .svc-link{color:var(--orange)}
-.service-card:hover .svc-arrow{transform:translateX(5px)}
-
-/* HOW IT WORKS */
-.how-it-works{padding:96px 24px;background:var(--white)}
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:40px;margin-top:48px}
-.step{text-align:center}
-.step-num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--white);font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;transition:all .3s var(--ease)}
-.step:hover .step-num{background:var(--orange);transform:scale(1.1);box-shadow:0 0 0 8px var(--orange-glow)}
-.step h3{font-size:16px;font-weight:700;margin-bottom:7px}
-.step p{font-size:14px;color:var(--text-muted);line-height:1.6}
-
-/* COMMUNES */
-.communes-section{padding:96px 24px;background:var(--navy);color:var(--white);position:relative;overflow:hidden}
-.communes-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:40px 40px}
-.communes-section .section-inner{position:relative;z-index:1}
-.communes-section .section-title{color:var(--white)}
-.communes-section .section-desc{color:rgba(255,255,255,.5)}
-.communes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-top:40px}
-.commune-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:14px 16px;transition:all .25s var(--ease);cursor:default}
-.commune-card:hover{background:rgba(245,130,13,.14);border-color:rgba(245,130,13,.4);transform:translateY(-3px)}
-.commune-card-name{font-size:13px;font-weight:600;color:var(--white);margin-bottom:7px}
-.commune-dots{display:flex;gap:4px}
-.svc-dot{font-size:10px;background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px;color:rgba(255,255,255,.55)}
-.commune-card:hover .svc-dot{background:rgba(245,130,13,.2);color:rgba(255,255,255,.8)}
-
-/* CTA PROVIDERS */
-.cta-providers{padding:96px 24px;background:var(--gray-bg)}
-.cta-card{max-width:620px;margin:0 auto;background:var(--white);border-radius:20px;padding:56px 48px;border:1px solid var(--gray-mid);box-shadow:0 4px 40px rgba(0,0,0,.06);text-align:center}
-.cta-card h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
-.cta-card p{font-size:15px;color:var(--text-muted);margin-bottom:26px;max-width:360px;margin-left:auto;margin-right:auto}
-.cta-features{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
-.cta-feat{display:flex;align-items:center;gap:6px;font-size:13px;color:#555}
-.cta-feat::before{content:'✓';color:var(--orange);font-weight:700}
-
-/* FOOTER */
-.site-footer{background:#080E1F;color:rgba(255,255,255,.4);padding:56px 24px 32px}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
-.footer-brand .f-logo{font-size:18px;font-weight:700;color:var(--white);display:block;margin-bottom:10px}
-.footer-brand .f-logo span{color:var(--orange)}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);max-width:210px;line-height:1.6}
-.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col a{font-size:13px;color:rgba(255,255,255,.38);transition:color .2s}
-.footer-col a:hover{color:rgba(255,255,255,.8)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,.25)}
-
-/* FLOATING CTA */
-.float-cta{position:fixed;bottom:24px;right:24px;z-index:90;display:flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);font-size:14px;font-weight:600;padding:13px 20px;border-radius:50px;border:none;cursor:pointer;font-family:inherit;box-shadow:0 4px 24px rgba(245,130,13,.4);opacity:0;transform:translateY(16px);transition:all .3s var(--ease)}
-.float-cta.visible{opacity:1;transform:translateY(0)}
-.float-cta:hover{background:var(--orange-dark);transform:translateY(-3px);box-shadow:0 8px 32px rgba(245,130,13,.5)}
-.f-pulse{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.85);position:relative;flex-shrink:0}
-.f-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);animation:pulseRing 1.5s ease-out infinite}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .hero,.services,.how-it-works,.communes-section,.cta-providers{padding:64px 20px}
-  .stat-item{padding:0 16px}
-  .stat-num{font-size:24px}
-  .cta-card{padding:36px 24px}
-  .footer-top{flex-direction:column;gap:28px}
-  .footer-bottom{flex-direction:column;text-align:center}
-}
-@media(max-width:480px){
-  .hero-actions{flex-direction:column;align-items:center}
-  .btn-primary,.btn-secondary{width:100%;justify-content:center}
-  .hero-stats{gap:0}
-  .stat-item{padding:0 12px}
-  .communes-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
-}
-</style>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maestros del Hogar — Gasfiter, Electricista y Cerrajero en Santiago</title><meta name="description" content="Directorio de técnicos verificados en Santiago. Gasfiter, electricista y cerrajero con cobertura en 15 comunas. Urgencia 24h. Presupuesto antes de empezar.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://www.maestrosdelhogar.cl/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="Maestros del Hogar — Gasfiter, Electricista y Cerrajero en Santiago"><meta property="og:description" content="Directorio de técnicos verificados en Santiago. Gasfiter, electricista y cerrajero con cobertura en 15 comunas. Urgencia 24h. Presupuesto antes de empezar.">
+<meta property="og:url" content="https://www.maestrosdelhogar.cl/"><meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL"><meta property="og:site_name" content="Maestros del Hogar">
+<meta property="og:image" content="https://www.maestrosdelhogar.cl/og-image.svg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/css/styles.css?v=1"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Maestros del Hogar","url":"https://www.maestrosdelhogar.cl","description":"Directorio de técnicos del hogar en Santiago: gasfiter, electricista y cerrajero con cobertura en 15 comunas.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.maestrosdelhogar.cl/gasfiter/{search_term_string}/"},"query-input":"required name=search_term_string"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona el directorio Maestros del Hogar?","acceptedAnswer":{"@type":"Answer","text":"Completas el formulario de contacto indicando el servicio que necesitas y tu commune. Te conectamos con el técnico verificado disponible más cercano en Santiago. El técnico te contacta directamente — sin intermediarios en la conversación ni en el pago."}},{"@type":"Question","name":"¿Cuánto demoran en responder?","acceptedAnswer":{"@type":"Answer","text":"En horario hábil (lunes a viernes, 8:00–18:00), el técnico contacta en 1–3 horas según la disponibilidad en tu zona. En urgencias nocturnas, el tiempo estimado es de 2–4 horas."}},{"@type":"Question","name":"¿Cómo verifico que el técnico está habilitado SEC?","acceptedAnswer":{"@type":"Answer","text":"Para gasfiter y electricista, el registro SEC es verificable en sec.cl ingresando el nombre o RUT del técnico. Los técnicos del directorio proporcionan su número SEC a quienes lo soliciten."}},{"@type":"Question","name":"¿El servicio tiene algún costo para el usuario?","acceptedAnswer":{"@type":"Answer","text":"No. El directorio es gratuito para quien busca el servicio. Los técnicos pagan una suscripción por aparecer en el directorio — los usuarios no tienen ningún costo adicional más allá del precio del trabajo que contraten con el técnico."}}]}</script>
 </head>
 <body>
-
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">Maestros del <span>Hogar</span></a>
-    <nav aria-label="Navegación principal">
-      <ul class="nav-links">
-        <li><a href="/gasfiter/">Gasfiter</a></li>
-        <li><a href="/electricista/">Electricista</a></li>
-        <li><a href="/cerrajero/">Cerrajero</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/proveedores/" class="nav-cta">Soy proveedor</a></li>
-      </ul>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
+<header class="site-header" id="site-header"><div class="header-inner">
+<a href="/" class="logo">Maestros del <span>Hogar</span></a>
+<nav aria-label="Navegación principal"><ul class="nav-links">
+<li><a href="/gasfiter/">Gasfiter</a></li><li><a href="/electricista/">Electricista</a></li>
+<li><a href="/cerrajero/">Cerrajero</a></li>
+<li><a href="/proveedores/" class="nav-cta">Soy proveedor</a></li>
+</ul></nav>
+<button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <a href="/gasfiter/">Gasfiter</a>
-  <a href="/electricista/">Electricista</a>
-  <a href="/cerrajero/">Cerrajero</a>
-  <a href="/proveedores/" class="cta-mob">Soy proveedor →</a>
-</div>
-
+<a href="/gasfiter/">Gasfiter</a><a href="/electricista/">Electricista</a>
+<a href="/cerrajero/">Cerrajero</a><a href="/proveedores/" class="mob-cta">Soy proveedor →</a></div>
 <main>
-
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-content">
-    <div class="hero-tag"><span class="pulse-dot"></span>Disponible ahora · Santiago</div>
-    <h1 id="hero-title">Técnicos del hogar<br><em>cuando más los necesitas</em></h1>
-    <p>Encuentra gasfiter, electricista o cerrajero a domicilio en tu comuna. Urgencia disponible las 24 horas.</p>
-    <div class="hero-actions">
-      <a href="#servicios" class="btn-primary">Ver servicios ↓</a>
-      <a href="/proveedores/" class="btn-secondary">Soy técnico →</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num" data-count="15" data-suffix="+">0+</div>
-        <div class="stat-lbl">Comunas</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-count="3">0</div>
-        <div class="stat-lbl">Servicios</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-count="24" data-suffix="h">0h</div>
-        <div class="stat-lbl">Disponibilidad</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-count="100" data-suffix="% gratis">0</div>
-        <div class="stat-lbl">Para usuarios</div>
+<section class="hero-home" aria-labelledby="home-title">
+  <div class="hero-home-inner">
+    <div class="hero-home-text">
+      <div class="hero-hub-tag"><span class="pulse-dot"></span>Técnicos disponibles hoy · Santiago</div>
+      <h1 id="home-title">Encuentra el técnico<br>que necesitas <em>hoy</em></h1>
+      <p>Gasfiter, electricista o cerrajero en las 15 principales comunas de Santiago. Técnicos verificados con presupuesto acordado antes de empezar — sin cobros sorpresa.</p>
+      <div class="hero-home-cards">
+        <a href="/gasfiter/" class="hero-svc-card"><span class="hero-svc-icon">🔧</span><span class="hero-svc-name">Gasfiter</span><span class="hero-svc-desc">Certificado SEC</span></a>
+        <a href="/electricista/" class="hero-svc-card"><span class="hero-svc-icon">⚡</span><span class="hero-svc-name">Electricista</span><span class="hero-svc-desc">Habilitado SEC</span></a>
+        <a href="/cerrajero/" class="hero-svc-card"><span class="hero-svc-icon">🔑</span><span class="hero-svc-name">Cerrajero</span><span class="hero-svc-desc">Urgencia 24h</span></a>
       </div>
     </div>
-  </div>
-  <div class="scroll-hint" aria-hidden="true">
-    <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg>
   </div>
 </section>
 
-<section class="services" id="servicios" aria-labelledby="services-title">
+<section class="section-white" aria-labelledby="como-t">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-label">Nuestros servicios</p>
-      <h2 class="section-title" id="services-title">¿Qué servicio necesitas?</h2>
-      <p class="section-desc">Cobertura en las principales comunas de Santiago con técnicos disponibles para urgencias.</p>
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title" id="como-t">De tu solicitud al técnico en tu puerta</h2>
     </div>
-    <div class="services-grid">
-      <article class="service-card reveal d1">
-        <div class="svc-icon">🔧</div>
-        <h2>Gasfiter a domicilio</h2>
-        <p>Reparación de cañerías, calefont, calefacción y fugas de gas o agua. Técnicos certificados SEC disponibles en tu comuna.</p>
-        <div class="communes-list">
-          <span class="commune-tag">Las Condes</span>
-          <span class="commune-tag">Providencia</span>
-          <span class="commune-tag">Ñuñoa</span>
-          <span class="commune-tag">La Florida</span>
-          <span class="commune-tag">Maipú</span>
-          <span class="commune-tag">+ 10 más</span>
-        </div>
-        <a href="/gasfiter/" class="svc-link">Ver gasfiteros disponibles <span class="svc-arrow">→</span></a>
-      </article>
-      <article class="service-card reveal d2">
-        <div class="svc-icon">⚡</div>
-        <h2>Electricista a domicilio</h2>
-        <p>Instalaciones eléctricas, cortocircuitos, tableros eléctricos y certificación SEC. Atención rápida en tu zona.</p>
-        <div class="communes-list">
-          <span class="commune-tag">Las Condes</span>
-          <span class="commune-tag">Providencia</span>
-          <span class="commune-tag">Ñuñoa</span>
-          <span class="commune-tag">Vitacura</span>
-          <span class="commune-tag">San Miguel</span>
-          <span class="commune-tag">+ 10 más</span>
-        </div>
-        <a href="/electricista/" class="svc-link">Ver electricistas disponibles <span class="svc-arrow">→</span></a>
-      </article>
-      <article class="service-card reveal d3">
-        <div class="svc-icon">🔑</div>
-        <h2>Cerrajero a domicilio</h2>
-        <p>Apertura de puertas, cambio de chapas y cerraduras de seguridad. Urgencia 24 horas en toda la Región Metropolitana.</p>
-        <div class="communes-list">
-          <span class="commune-tag">Las Condes</span>
-          <span class="commune-tag">Ñuñoa</span>
-          <span class="commune-tag">La Florida</span>
-          <span class="commune-tag">Maipú</span>
-          <span class="commune-tag">Macul</span>
-          <span class="commune-tag">+ 10 más</span>
-        </div>
-        <a href="/cerrajero/" class="svc-link">Ver cerrajeros disponibles <span class="svc-arrow">→</span></a>
-      </article>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <div class="tip-card reveal d1"><span class="tip-icon" style="font-size:28px">📋</span><h3>1. Describe el problema</h3><p>Completa el formulario con el servicio que necesitas y tu dirección en Santiago. Tarda menos de 1 minuto.</p></div>
+      <div class="tip-card reveal d2"><span class="tip-icon" style="font-size:28px">🔍</span><h3>2. Buscamos el técnico</h3><p>Identificamos el técnico verificado disponible más cercano a tu dirección y que cubre tu tipo de trabajo.</p></div>
+      <div class="tip-card reveal d3"><span class="tip-icon" style="font-size:28px">📲</span><h3>3. El técnico te contacta</h3><p>El técnico te llama para confirmar la visita, dar el presupuesto y acordar el horario. Sin intermediarios.</p></div>
+      <div class="tip-card reveal d4"><span class="tip-icon" style="font-size:28px">✅</span><h3>4. Trabajo resuelto</h3><p>El técnico realiza el trabajo con presupuesto acordado previo. El pago es directo entre tú y el técnico.</p></div>
     </div>
   </div>
 </section>
 
-<section class="how-it-works" aria-labelledby="how-title">
+<section class="section-gray" aria-labelledby="svc-t">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-label">¿Cómo funciona?</p>
-      <h2 class="section-title" id="how-title">Encuentra un técnico en minutos</h2>
-      <p class="section-desc">Sin intermediarios, sin comisiones ocultas. Contacto directo con el técnico.</p>
+      <span class="section-label">Servicios disponibles</span>
+      <h2 class="section-title" id="svc-t">Qué resolvemos en Santiago</h2>
     </div>
-    <div class="steps-grid">
-      <div class="step reveal d1">
-        <div class="step-num">1</div>
-        <h3>Elige tu servicio</h3>
-        <p>Selecciona gasfiter, electricista o cerrajero según lo que necesitas resolver hoy.</p>
-      </div>
-      <div class="step reveal d2">
-        <div class="step-num">2</div>
-        <h3>Selecciona tu comuna</h3>
-        <p>Filtra por tu zona y encuentra técnicos con disponibilidad inmediata cerca de ti.</p>
-      </div>
-      <div class="step reveal d3">
-        <div class="step-num">3</div>
-        <h3>Contacta directo</h3>
-        <p>Llama o escribe al técnico sin pasar por intermediarios ni pagar comisiones extra.</p>
-      </div>
-      <div class="step reveal d4">
-        <div class="step-num">4</div>
-        <h3>Problema resuelto</h3>
-        <p>El técnico llega a tu domicilio y resuelve el problema en el menor tiempo posible.</p>
-      </div>
+    <div class="services-grid-hub">
+      <div class="service-item reveal d1"><span class="service-item-icon">💧</span><h3>Fuga de agua</h3><p>Detección y reparación de fugas en cañerías vistas y empotradas. Diagnóstico con prueba de presión.</p><a href="/gasfiter/">Ver gasfiter →</a></div>
+      <div class="service-item reveal d2"><span class="service-item-icon">🔥</span><h3>Calefont</h3><p>Reparación, mantención e instalación de calefones. Marcas Mademsa, Rheem, Bosch, Rinnai y Splendid.</p><a href="/gasfiter/calefont/">Ver servicio →</a></div>
+      <div class="service-item reveal d3"><span class="service-item-icon">⚡</span><h3>Cortocircuito urgente</h3><p>Diagnóstico y reparación de cortocircuitos y tableros eléctricos. Electricistas habilitados SEC disponibles hoy.</p><a href="/electricista/urgencia/">Ver urgencia →</a></div>
+      <div class="service-item reveal d4"><span class="service-item-icon">🔌</span><h3>Tablero eléctrico</h3><p>Reparación, ampliación y modernización de tableros. Instalación de disyuntores termomagnéticos.</p><a href="/electricista/">Ver electricista →</a></div>
+      <div class="service-item reveal d1"><span class="service-item-icon">🚪</span><h3>Apertura de puertas</h3><p>Cerrajero urgente cuando quedas afuera de tu vivienda o local. Sin daño a la puerta en la mayoría de los casos.</p><a href="/cerrajero/urgencia/">Ver urgencia →</a></div>
+      <div class="service-item reveal d2"><span class="service-item-icon">🚗</span><h3>Cerrajero de autos</h3><p>Apertura de vehículos y programación de llaves con transponder. Marcas japonesas, coreanas y europeas.</p><a href="/cerrajero/autos/">Ver servicio →</a></div>
     </div>
   </div>
 </section>
 
-<section class="communes-section" aria-labelledby="communes-title">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <p class="section-label">Cobertura</p>
-      <h2 class="section-title" id="communes-title">Comunas disponibles en Santiago</h2>
-      <p class="section-desc">Cubrimos 15 comunas con los tres servicios disponibles. Ampliando cobertura constantemente.</p>
-    </div>
-    <div class="communes-grid" id="communes-grid"></div>
+<section class="section-navy"><div class="section-inner">
+  <div class="section-header reveal">
+    <span class="section-label">Cobertura</span>
+    <h2 class="section-title">15 comunas de Santiago con técnicos disponibles</h2>
   </div>
-</section>
-
-<section class="cta-providers" aria-labelledby="cta-title">
-  <div class="section-inner">
-    <div class="cta-card reveal">
-      <h2 id="cta-title">¿Eres gasfiter, electricista o cerrajero?</h2>
-      <p>Aparece en el directorio y recibe solicitudes de clientes en tu comuna sin pagar comisión.</p>
-      <div class="cta-features">
-        <span class="cta-feat">Sin comisión por trabajo</span>
-        <span class="cta-feat">Clientes en tu zona</span>
-        <span class="cta-feat">Perfil gratuito</span>
-      </div>
-      <a href="/proveedores/" class="btn-primary">Aparecer en el directorio →</a>
-    </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center" class="reveal">
+    <a href="/gasfiter/las-condes/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Las Condes</a>
+    <a href="/gasfiter/nunoa/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Ñuñoa</a>
+    <a href="/gasfiter/providencia/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Providencia</a>
+    <a href="/gasfiter/la-florida/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">La Florida</a>
+    <a href="/gasfiter/maipu/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Maipú</a>
+    <a href="/gasfiter/puente-alto/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Puente Alto</a>
+    <a href="/gasfiter/santiago-centro/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Santiago Centro</a>
+    <a href="/gasfiter/macul/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Macul</a>
+    <a href="/gasfiter/recoleta/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Recoleta</a>
+    <a href="/gasfiter/penalolen/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Peñalolén</a>
+    <a href="/gasfiter/san-miguel/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">San Miguel</a>
+    <a href="/gasfiter/vitacura/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Vitacura</a>
+    <a href="/gasfiter/la-reina/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">La Reina</a>
+    <a href="/gasfiter/lo-barnechea/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Lo Barnechea</a>
+    <a href="/gasfiter/estacion-central/" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:13px;padding:9px 16px;border-radius:var(--r);text-decoration:none;transition:all .2s">Estación Central</a>
   </div>
-</section>
+</div></section>
 
+<section class="section-white"><div class="section-inner">
+  <div class="section-header reveal">
+    <span class="section-label">Preguntas frecuentes</span>
+    <h2 class="section-title">Lo que más preguntan sobre el directorio</h2>
+  </div>
+  <div class="faq-list reveal" style="max-width:720px"><div class="faq-item"><button class="faq-question" aria-expanded="false">¿Cómo funciona el directorio Maestros del Hogar?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Completas el formulario de contacto indicando el servicio que necesitas y tu commune. Te conectamos con el técnico verificado disponible más cercano en Santiago. El técnico te contacta directamente — sin intermediarios en la conversación ni en el pago.</div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">¿Cuánto demoran en responder?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">En horario hábil (lunes a viernes, 8:00–18:00), el técnico contacta en 1–3 horas según la disponibilidad en tu zona. En urgencias nocturnas, el tiempo estimado es de 2–4 horas.</div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">¿Cómo verifico que el técnico está habilitado SEC?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">Para gasfiter y electricista, el registro SEC es verificable en sec.cl ingresando el nombre o RUT del técnico. Los técnicos del directorio proporcionan su número SEC a quienes lo soliciten.</div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false">¿El servicio tiene algún costo para el usuario?<span class="faq-icon">+</span></button>
+<div class="faq-answer"><div class="faq-answer-inner">No. El directorio es gratuito para quien busca el servicio. Los técnicos pagan una suscripción por aparecer en el directorio — los usuarios no tienen ningún costo adicional más allá del precio del trabajo que contraten con el técnico.</div></div></div></div>
+</div></section>
+
+<section class="section-gray"><div class="section-inner">
+  <div class="section-header reveal">
+    <span class="section-label">Blog y guías</span>
+    <h2 class="section-title">Recursos para propietarios en Santiago</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px" class="reveal">
+    <a href="/blog/fuga-de-gas-en-casa/" style="background:var(--white);border-radius:var(--r-lg);padding:24px;text-decoration:none;border:1px solid var(--gray-mid);transition:all .2s;display:block" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--gray-mid)'">
+      <div style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Gasfitería</div>
+      <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4">Fuga de gas en casa: qué hacer</h3>
+      <p style="font-size:13px;color:var(--text-lt);line-height:1.6">Los cuatro pasos que debes seguir en ese orden exacto.</p>
+    </a>
+    <a href="/blog/que-es-termomagnético/" style="background:var(--white);border-radius:var(--r-lg);padding:24px;text-decoration:none;border:1px solid var(--gray-mid);transition:all .2s;display:block" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--gray-mid)'">
+      <div style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Electricidad</div>
+      <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4">¿Qué es un termomagnético y por qué se dispara?</h3>
+      <p style="font-size:13px;color:var(--text-lt);line-height:1.6">Cuándo puedes resolverlo tú y cuándo necesitas electricista.</p>
+    </a>
+    <a href="/blog/reparar-o-cambiar-calefont/" style="background:var(--white);border-radius:var(--r-lg);padding:24px;text-decoration:none;border:1px solid var(--gray-mid);transition:all .2s;display:block" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--gray-mid)'">
+      <div style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Calefont</div>
+      <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4">¿Reparar o cambiar el calefont?</h3>
+      <p style="font-size:13px;color:var(--text-lt);line-height:1.6">La regla del 60% y los criterios objetivos para decidir.</p>
+    </a>
+  </div>
+</div></section>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" class="f-logo">Maestros del <span>Hogar</span></a>
-        <p>Directorio de técnicos del hogar en Santiago de Chile. Urgencias 24 horas.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="/gasfiter/">Gasfiter Santiago</a></li>
-          <li><a href="/electricista/">Electricista Santiago</a></li>
-          <li><a href="/cerrajero/">Cerrajero Santiago</a></li>
-          <li><a href="/cerrajero/autos/">Cerrajero de autos</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Comunas</h4>
-        <ul>
-          <li><a href="/gasfiter/las-condes/">Las Condes</a></li>
-          <li><a href="/gasfiter/nunoa/">Ñuñoa</a></li>
-          <li><a href="/gasfiter/providencia/">Providencia</a></li>
-          <li><a href="/gasfiter/la-florida/">La Florida</a></li>
-          <li><a href="/gasfiter/maipu/">Maipú</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Información</h4>
-        <ul>
-          <li><a href="/proveedores/">Para proveedores</a></li>
-          <li><a href="/privacidad/">Privacidad</a></li>
-          <li><a href="/terminos/">Términos de uso</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Maestros del Hogar — Santiago, Chile</span>
-      <span>Gasfiter · Electricista · Cerrajero</span>
-    </div>
-  </div>
-</footer>
-
-<button class="float-cta" id="float-cta" onclick="window.location.href='/cerrajero/'" aria-label="Urgencia 24 horas">
-  <span class="f-pulse"></span>
-  Urgencia 24h
-</button>
-
-<script>
-// Communes data
-const communes=[
-  {name:'Santiago Centro',s:['G','E','C']},
-  {name:'Providencia',s:['G','E','C']},
-  {name:'Ñuñoa',s:['G','E','C']},
-  {name:'Las Condes',s:['G','E','C']},
-  {name:'Maipú',s:['G','E','C']},
-  {name:'La Florida',s:['G','E','C']},
-  {name:'Puente Alto',s:['G','E','C']},
-  {name:'Macul',s:['G','E','C']},
-  {name:'Recoleta',s:['G','E','C']},
-  {name:'Peñalolén',s:['G','E','C']},
-  {name:'San Miguel',s:['G','E','C']},
-  {name:'Vitacura',s:['G','E','C']},
-  {name:'La Reina',s:['G','E','C']},
-  {name:'Lo Barnechea',s:['G','E','C']},
-  {name:'Estación Central',s:['G','E','C']},
-];
-
-// Render communes
-const grid=document.getElementById('communes-grid');
-if(grid){
-  communes.forEach((c,i)=>{
-    const el=document.createElement('div');
-    el.className='commune-card reveal';
-    el.style.transitionDelay=(i*0.04)+'s';
-    el.innerHTML=`<div class="commune-card-name">${c.name}</div><div class="commune-dots">${c.s.map(x=>`<span class="svc-dot">${x}</span>`).join('')}</div>`;
-    grid.appendChild(el);
-  });
-}
-
-// Sticky header
-const header=document.getElementById('site-header');
-window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>50)},{passive:true});
-
-// Float CTA
-const floatBtn=document.getElementById('float-cta');
-window.addEventListener('scroll',()=>{floatBtn.classList.toggle('visible',scrollY>280)},{passive:true});
-
-// Mobile menu
-const ham=document.getElementById('hamburger');
-const mob=document.getElementById('mobile-menu');
-ham.addEventListener('click',()=>{
-  const open=mob.classList.toggle('open');
-  ham.classList.toggle('open',open);
-  ham.setAttribute('aria-expanded',open);
-  mob.setAttribute('aria-hidden',!open);
-});
-document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
-  mob.classList.remove('open');ham.classList.remove('open');
-  ham.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');
-}));
-
-// Intersection Observer — reveal
-const revObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
-},{threshold:0.1,rootMargin:'0px 0px -36px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-
-// Counter animation
-function runCounter(el){
-  const target=+el.dataset.count;
-  const suffix=el.dataset.suffix||'';
-  const dur=1600;const step=14;
-  const inc=target/(dur/step);
-  let cur=0;
-  const t=setInterval(()=>{
-    cur+=inc;
-    if(cur>=target){cur=target;clearInterval(t);}
-    el.textContent=Math.floor(cur)+suffix;
-  },step);
-}
-const cntObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){runCounter(e.target);cntObs.unobserve(e.target);}});
-},{threshold:0.5});
-document.querySelectorAll('[data-count]').forEach(el=>cntObs.observe(el));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-</script>
-</body>
-</html>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-top">
+<div class="footer-brand"><a href="/" class="f-logo">Maestros del <span>Hogar</span></a><p>Directorio de técnicos del hogar en Santiago de Chile.</p></div>
+<div class="footer-col"><h4>Accesos rápidos</h4><ul><li><a href="/gasfiter/">Gasfiter Santiago</a></li><li><a href="/electricista/">Electricista Santiago</a></li><li><a href="/cerrajero/">Cerrajero Santiago</a></li><li><a href="/gasfiter/urgencia/">Urgencia gasfiter</a></li></ul></div>
+<div class="footer-col"><h4>Servicios</h4><ul>
+<li><a href="/gasfiter/">Gasfiter Santiago</a></li><li><a href="/electricista/">Electricista Santiago</a></li>
+<li><a href="/cerrajero/">Cerrajero Santiago</a></li></ul></div>
+<div class="footer-col"><h4>Información</h4><ul>
+<li><a href="/proveedores/">Para proveedores</a></li><li><a href="/blog/">Blog y guías</a></li>
+<li><a href="/privacidad/">Privacidad</a></li></ul></div>
+</div><div class="footer-bottom"><span>© 2026 Maestros del Hogar — Santiago, Chile</span></div>
+</div></footer><script src="/js/main.js?v=1"></script></body></html>
