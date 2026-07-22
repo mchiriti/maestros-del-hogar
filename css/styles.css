@@ -70,7 +70,7 @@ a{text-decoration:none;color:inherit;}
 
 /* ── HERO HUB ── */
 .hero-hub{background:var(--navy);padding-top:var(--header-h);}
-.hero-hub-inner{max-width:var(--max-w);margin:0 auto;padding:60px 24px 0;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start;}
+.hero-hub-inner{max-width:var(--max-w);margin:0 auto;padding:60px 24px 44px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:start;}
 @media(max-width:768px){.hero-hub-inner{grid-template-columns:1fr;}}
 .hero-hub-text h1{font-size:clamp(28px,5vw,52px);font-weight:900;letter-spacing:-1px;color:var(--white);line-height:1.1;margin-bottom:18px;}
 .hero-hub-text h1 em{color:var(--orange);font-style:normal;}
