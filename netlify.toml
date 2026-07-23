@@ -1,0 +1,54 @@
+# netlify.toml — Maestros del Hogar
+# ─────────────────────────────────────────────────────────────────
+# Este archivo va en la RAÍZ del repositorio (mismo nivel que index.html)
+
+[build]
+  # Directorio donde están las Netlify Functions
+  functions = "netlify/functions"
+
+# ─── Form notifications → Functions ──────────────────────────
+# IMPORTANTE: estos form_names deben coincidir exactamente con el
+# atributo name="" de cada <form> en el HTML.
+# La configuración de webhooks se hace desde el panel de Netlify:
+# Settings → Forms → Form notifications → Add outgoing webhook
+# URL del webhook: https://www.maestrosdelhogar.cl/.netlify/functions/submit-lead
+# (Ver guía de configuración en maestros-backend-setup.html)
+
+# ─── Headers de seguridad ─────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers específicos para las functions
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://www.maestrosdelhogar.cl"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# ─── Redirects ────────────────────────────────────────────────
+# Las URLs sin trailing slash redirigen a la versión con slash
+[[redirects]]
+  from = "/gasfiter"
+  to = "/gasfiter/"
+  status = 301
+
+[[redirects]]
+  from = "/electricista"
+  to = "/electricista/"
+  status = 301
+
+[[redirects]]
+  from = "/cerrajero"
+  to = "/cerrajero/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
