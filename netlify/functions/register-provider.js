@@ -171,7 +171,6 @@ exports.handler = async (event) => {
       sec_number: raw.sec    || '',
       plan:     'basico',
       active:   false, // Se activa manualmente después de verificar
-      registered_at: new Date().toISOString(),
     });
 
     // Email de bienvenida al proveedor
