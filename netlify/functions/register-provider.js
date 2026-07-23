@@ -144,6 +144,10 @@ exports.handler = async (event) => {
     try {
       const parsed = JSON.parse(event.body);
       raw = parsed.payload?.data || parsed.data || parsed;
+      // Netlify manda el nombre del formulario en payload.form_name (nivel
+      // superior), no siempre dentro de "data". Sin este respaldo, formName
+      // llegaba vacío y el filtro de abajo descartaba el formulario correcto.
+      raw['form-name'] = raw['form-name'] || parsed.payload?.form_name || parsed.form_name || '';
     } catch {
       const params = new URLSearchParams(event.body);
       params.forEach((v, k) => { raw[k] = v; });
