@@ -38,7 +38,7 @@ function httpRequest(options, body = null) {
 
 async function airtableCreate(table, fields) {
   const body = JSON.stringify({ records: [{ fields }] });
-  return httpRequest({
+  const res = await httpRequest({
     hostname: 'api.airtable.com',
     path: `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(table)}`,
     method: 'POST',
@@ -48,6 +48,13 @@ async function airtableCreate(table, fields) {
       'Content-Length': Buffer.byteLength(body),
     },
   }, body);
+  if (res.status >= 400 || res.body?.error) {
+    const errMsg = res.body?.error
+      ? `${res.body.error.type || ''}: ${res.body.error.message || JSON.stringify(res.body.error)}`
+      : `HTTP ${res.status}`;
+    throw new Error(`Airtable rechazó el registro en "${table}" — ${errMsg}`);
+  }
+  return res.body;
 }
 
 async function sendEmail(to, subject, html) {

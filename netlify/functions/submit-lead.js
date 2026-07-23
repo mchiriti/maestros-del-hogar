@@ -103,6 +103,17 @@ async function airtableCreate(table, fields) {
       'Content-Length': Buffer.byteLength(body),
     },
   }, body);
+  // IMPORTANTE: Airtable puede responder con un cuerpo de error (ej: 422
+  // Unprocessable Entity con el detalle del campo que falló) sin que
+  // httpRequest() lo trate como fallo de red. Sin esta verificación, un
+  // registro rechazado se trataba como "éxito" silenciosamente y nunca
+  // aparecía en el log.
+  if (res.status >= 400 || res.body?.error) {
+    const errMsg = res.body?.error
+      ? `${res.body.error.type || ''}: ${res.body.error.message || JSON.stringify(res.body.error)}`
+      : `HTTP ${res.status}`;
+    throw new Error(`Airtable rechazó el registro en "${table}" — ${errMsg}`);
+  }
   return res.body;
 }
 
@@ -304,6 +315,10 @@ exports.handler = async (event) => {
     try {
       const parsed = JSON.parse(event.body);
       raw = parsed.payload?.data || parsed.data || parsed;
+      // Netlify manda el nombre del formulario en payload.form_name (nivel
+      // superior), no siempre dentro de "data". Si no viene en raw['form-name']
+      // (campo hidden del HTML), usamos este como respaldo.
+      raw['form-name'] = raw['form-name'] || parsed.payload?.form_name || parsed.form_name || '';
     } catch {
       // Fallback: form-urlencoded directo
       const params = new URLSearchParams(event.body);
