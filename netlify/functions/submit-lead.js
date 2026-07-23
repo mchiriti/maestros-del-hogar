@@ -326,7 +326,29 @@ exports.handler = async (event) => {
     }
 
     const formName = raw['form-name'] || '';
+
+    // IMPORTANTE: el webhook de submit-lead está configurado en "Any form"
+    // para cubrir las 55 variantes de contacto por comuna sin tener que
+    // registrar cada una manualmente. Pero eso significa que también
+    // recibe el formulario de registro de proveedores — que NO es un lead
+    // y lo maneja register-provider.js por separado. Sin este filtro, se
+    // enviaba por error el email de "confirmación de solicitud" (pensado
+    // para clientes) a quien se estaba registrando como proveedor.
+    if (formName.includes('proveedor')) {
+      console.log(`[submit-lead] Formulario "${formName}" es de registro de proveedor — ignorado (lo procesa register-provider)`);
+      return { statusCode: 200, body: 'ignored: provider registration form' };
+    }
+
     const { service, commune } = parseFormName(formName, raw);
+
+    // Defensa adicional: si no se pudo determinar un servicio válido
+    // (gasfiter/electricista/cerrajero), no es un formulario de lead
+    // reconocible — no enviamos ningún email para evitar confirmaciones
+    // vacías o mal formadas como "✅  en ".
+    if (!SERVICE_NAMES[service]) {
+      console.warn(`[submit-lead] Formulario "${formName}" no coincide con ningún servicio conocido — ignorado`);
+      return { statusCode: 200, body: 'ignored: unrecognized form' };
+    }
 
     console.log(`[submit-lead] form="${formName}" service="${service}" commune="${commune}" user="${raw.nombre}"`);
 

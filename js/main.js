@@ -61,6 +61,20 @@ document.addEventListener('DOMContentLoaded',function(){
   if(form&&succ){
     form.addEventListener('submit',function(e){
       e.preventDefault();
+
+      // Validación del picker de comunas (si existe en este formulario):
+      // un input type="hidden" con "required" no es confiable en todos
+      // los navegadores, así que validamos explícitamente aquí.
+      var communePicker = document.getElementById('commune-picker');
+      var communeHidden = document.getElementById('pc');
+      if (communePicker && communeHidden && !communeHidden.value.trim()) {
+        communePicker.style.borderColor = '#EF4444';
+        communePicker.scrollIntoView({behavior:'smooth', block:'center'});
+        var pcInputEl = document.getElementById('pc-input');
+        if (pcInputEl) pcInputEl.focus();
+        return;
+      }
+
       var data=new FormData(form);
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
         body:new URLSearchParams(data).toString()})
@@ -69,6 +83,95 @@ document.addEventListener('DOMContentLoaded',function(){
         form.style.display='none';succ.style.display='block';
       })
       .catch(function(){form.submit();});
+    });
+  }
+
+  // ─── Commune autocomplete picker (solo en /proveedores/) ────
+  var pcInput = document.getElementById('pc-input');
+  var pcHidden = document.getElementById('pc');
+  var pcChips = document.getElementById('commune-chips');
+  var pcSuggestions = document.getElementById('commune-suggestions');
+  var pcPicker = document.getElementById('commune-picker');
+
+  if (pcInput && pcHidden && pcChips && pcSuggestions && pcPicker) {
+    var COMMUNES = ['Las Condes','Ñuñoa','Providencia','La Florida','Maipú','Puente Alto',
+      'Santiago Centro','Macul','Recoleta','Peñalolén','San Miguel','Vitacura',
+      'La Reina','Lo Barnechea','Estación Central'];
+    var selected = [];
+
+    function syncHidden(){
+      pcHidden.value = selected.join(', ');
+    }
+
+    function renderChips(){
+      pcChips.innerHTML = selected.map(function(c, i){
+        return '<span class="commune-chip">' + c +
+          '<button type="button" data-idx="' + i + '" aria-label="Quitar ' + c + '">✕</button></span>';
+      }).join('');
+      pcChips.querySelectorAll('button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          selected.splice(parseInt(this.dataset.idx, 10), 1);
+          renderChips();
+          syncHidden();
+        });
+      });
+    }
+
+    function highlight(text, query){
+      var idx = text.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return text;
+      return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + query.length) + '</mark>' + text.slice(idx + query.length);
+    }
+
+    function renderSuggestions(){
+      var query = pcInput.value.trim();
+      var available = COMMUNES.filter(function(c){ return selected.indexOf(c) === -1; });
+      var matches = query
+        ? available.filter(function(c){ return c.toLowerCase().indexOf(query.toLowerCase()) !== -1; })
+        : available;
+
+      if (matches.length === 0) {
+        pcSuggestions.innerHTML = '<div class="commune-suggestion-empty">' +
+          (available.length === 0 ? 'Ya agregaste las 15 comunas' : 'Sin coincidencias') + '</div>';
+      } else {
+        pcSuggestions.innerHTML = matches.map(function(c){
+          return '<div class="commune-suggestion" data-value="' + c + '">' +
+            (query ? highlight(c, query) : c) + '</div>';
+        }).join('');
+      }
+
+      pcSuggestions.querySelectorAll('.commune-suggestion[data-value]').forEach(function(el){
+        el.addEventListener('click', function(){
+          selected.push(this.dataset.value);
+          pcInput.value = '';
+          renderChips();
+          syncHidden();
+          renderSuggestions();
+          pcInput.focus();
+        });
+      });
+    }
+
+    pcInput.addEventListener('focus', function(){
+      renderSuggestions();
+      pcSuggestions.classList.add('open');
+    });
+    pcInput.addEventListener('input', function(){
+      renderSuggestions();
+      pcSuggestions.classList.add('open');
+    });
+    document.addEventListener('click', function(e){
+      if (!pcPicker.contains(e.target)) {
+        pcSuggestions.classList.remove('open');
+      }
+    });
+    // Enter selecciona la primera coincidencia visible
+    pcInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        var first = pcSuggestions.querySelector('.commune-suggestion[data-value]');
+        if (first) first.click();
+      }
     });
   }
 });

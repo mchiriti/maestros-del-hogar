@@ -167,6 +167,25 @@ a{text-decoration:none;color:inherit;}
 .form-row label{font-size:13px;font-weight:600;color:rgba(255,255,255,.75);}
 .form-row input,.form-row textarea,.form-row select{padding:12px 16px;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);border-radius:var(--r);font-size:14px;font-family:inherit;transition:border-color .2s;width:100%;}
 .form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--orange);}
+.form-row select option{background:var(--navy);color:var(--white);}
+
+/* ── COMMUNE AUTOCOMPLETE PICKER ── */
+.commune-picker{position:relative;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r);padding:8px;transition:border-color .2s;}
+.commune-picker:focus-within{border-color:var(--orange);}
+.commune-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
+.commune-chips:empty{margin-bottom:0;}
+.commune-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(245,130,13,.18);border:1px solid rgba(245,130,13,.4);color:var(--orange);font-size:12px;font-weight:600;padding:5px 8px 5px 12px;border-radius:20px;}
+.commune-chip button{background:none;border:none;color:var(--orange);cursor:pointer;font-size:15px;line-height:1;padding:0 2px;opacity:.75;}
+.commune-chip button:hover{opacity:1;}
+#pc-input{width:100%;background:none;border:none;color:var(--white);font-size:14px;padding:6px 4px;font-family:inherit;}
+#pc-input:focus{outline:none;}
+#pc-input::placeholder{color:rgba(255,255,255,.3);}
+.commune-suggestions{display:none;position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--navy-mid);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);max-height:220px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.commune-suggestions.open{display:block;}
+.commune-suggestion{padding:11px 14px;font-size:14px;color:rgba(255,255,255,.85);cursor:pointer;transition:background .15s;}
+.commune-suggestion:hover,.commune-suggestion.active{background:rgba(245,130,13,.15);color:var(--white);}
+.commune-suggestion mark{background:none;color:var(--orange);font-weight:700;}
+.commune-suggestion-empty{padding:11px 14px;font-size:13px;color:rgba(255,255,255,.4);}
 .form-row input::placeholder,.form-row textarea::placeholder{color:rgba(255,255,255,.3);}
 .form-row textarea{resize:vertical;min-height:96px;}
 .form-submit{width:100%;padding:15px;background:var(--orange);color:var(--white);font-size:16px;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;margin-top:8px;transition:all .2s;}

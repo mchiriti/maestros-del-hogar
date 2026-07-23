@@ -89,7 +89,7 @@
     <h2 class="section-title">Registra tu perfil en el directorio</h2>
     <p class="section-desc">Completa el formulario y te contactamos dentro de 48 horas hábiles para confirmar tu registro y publicar tu perfil.</p>
   </div>
-  <div class="contact-form reveal" style="max-width:600px">
+  <div class="contact-form reveal" style="max-width:600px;margin:0 auto">
     <div id="form-success" style="display:none;text-align:center;padding:32px 0">
       <span style="font-size:40px;display:block;margin-bottom:12px">✅</span>
       <p style="font-size:16px;font-weight:600;color:var(--text)">¡Registro recibido!</p>
@@ -112,8 +112,14 @@
           <option value="cerrajero">Cerrajero</option>
         </select>
       </div>
-      <div class="form-row"><label for="pc">Comunas de cobertura</label>
-        <input type="text" id="pc" name="comunas" placeholder="Ej: Las Condes, Ñuñoa, Providencia" required>
+      <div class="form-row">
+        <label for="pc-input">Comunas de cobertura</label>
+        <div class="commune-picker" id="commune-picker">
+          <div class="commune-chips" id="commune-chips"></div>
+          <input type="text" id="pc-input" placeholder="Escribe para buscar: Las Condes, Ñuñoa..." autocomplete="off">
+          <div class="commune-suggestions" id="commune-suggestions"></div>
+        </div>
+        <input type="hidden" id="pc" name="comunas">
       </div>
       <div class="form-row"><label for="pse">Número registro SEC (si aplica)</label>
         <input type="text" id="pse" name="sec" placeholder="Ej: G-12345 o E-67890 (déjalo vacío si no aplica)">
