@@ -1,0 +1,26 @@
+# Maestros del Hogar
+
+> Directorio de técnicos verificados a domicilio en Santiago de Chile: gasfiter, electricista y cerrajero. Cobertura en 15 comunas de la Región Metropolitana, con verificación de registro SEC para gasfiter y electricista, presupuesto acordado antes de cada trabajo, y atención de urgencia 24 horas.
+
+## Servicios
+
+- [Gasfiter en Santiago](https://maestrosdelhogar.cl/gasfiter/): fugas de agua y gas, calefont, destapado de cañerías, certificado SEC de instalación de gas.
+- [Electricista en Santiago](https://maestrosdelhogar.cl/electricista/): cortocircuitos, tableros eléctricos, certificado SEC de instalación eléctrica.
+- [Cerrajero en Santiago](https://maestrosdelhogar.cl/cerrajero/): apertura de puertas sin daño, cambio de chapas, cerrajero de autos.
+
+## Cobertura
+
+El directorio cubre 15 comunas de Santiago: Las Condes, Ñuñoa, Providencia, La Florida, Maipú, Puente Alto, Santiago Centro, Macul, Recoleta, Peñalolén, San Miguel, Vitacura, La Reina, Lo Barnechea y Estación Central. Cada servicio tiene una página específica por comuna con precios y tiempos de respuesta locales.
+
+## Verificación de técnicos
+
+Para gasfiter y electricista, el directorio verifica el registro vigente ante la Superintendencia de Electricidad y Combustibles (SEC) de Chile, exigido por el Decreto Supremo N°66 (gas) y el Reglamento NSEG 5 E.n.71 (electricidad). Para cerrajería, donde no existe un registro oficial único en Chile, se verifica experiencia comprobable.
+
+## Modelo
+
+Maestros del Hogar es un directorio de contacto, no un proveedor directo de servicios técnicos. Conecta a usuarios con técnicos independientes verificados; el trabajo y el pago se acuerdan directamente entre el cliente y el técnico. El uso del directorio es gratuito para quien busca un servicio.
+
+## Recursos
+
+- [Blog y guías](https://maestrosdelhogar.cl/blog/): artículos sobre seguridad del hogar, precios de referencia y normativa chilena (SEC, gas, electricidad).
+- [Para proveedores](https://maestrosdelhogar.cl/proveedores/): registro gratuito para técnicos que quieran aparecer en el directorio.

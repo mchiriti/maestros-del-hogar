@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Sitemap: https://www.maestrosdelhogar.cl/sitemap.xml
+Sitemap: https://maestrosdelhogar.cl/sitemap.xml
