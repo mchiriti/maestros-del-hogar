@@ -174,4 +174,19 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     });
   }
+
+  // ─── Carrusel de técnicos (flechas) ──────────────────────────
+  document.querySelectorAll('.techs-carousel-wrap').forEach(function(wrap){
+    var track = wrap.querySelector('.techs-carousel-track');
+    var prevBtn = wrap.querySelector('.techs-arrow-prev');
+    var nextBtn = wrap.querySelector('.techs-arrow-next');
+    if (!track) return;
+    var scrollAmount = function(){ return track.clientWidth * 0.8; };
+    if (prevBtn) prevBtn.addEventListener('click', function(){
+      track.scrollBy({left: -scrollAmount(), behavior: 'smooth'});
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function(){
+      track.scrollBy({left: scrollAmount(), behavior: 'smooth'});
+    });
+  });
 });

@@ -186,6 +186,33 @@ a{text-decoration:none;color:inherit;}
 .commune-suggestion:hover,.commune-suggestion.active{background:rgba(245,130,13,.15);color:var(--white);}
 .commune-suggestion mark{background:none;color:var(--orange);font-weight:700;}
 .commune-suggestion-empty{padding:11px 14px;font-size:13px;color:rgba(255,255,255,.4);}
+
+/* ── TECHNICIAN PHOTO CAROUSEL ── */
+.techs-carousel-wrap{position:relative;}
+.techs-carousel-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch;}
+.techs-carousel-track::-webkit-scrollbar{height:6px;}
+.techs-carousel-track::-webkit-scrollbar-thumb{background:var(--gray-mid);border-radius:10px;}
+.tech-card{scroll-snap-align:start;flex:0 0 240px;background:var(--white);border:1px solid var(--gray-mid);border-radius:var(--r-lg);overflow:hidden;}
+.tech-card-photo{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--gray-bg);display:block;}
+.tech-card-body{padding:16px;}
+.tech-card-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.tech-card-meta{font-size:12px;color:var(--text-lt);}
+.techs-carousel-arrows{display:flex;gap:8px;justify-content:flex-end;margin-bottom:14px;}
+.techs-arrow{width:36px;height:36px;border-radius:50%;background:var(--white);border:1px solid var(--gray-mid);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s;}
+.techs-arrow:hover{border-color:var(--orange);color:var(--orange);}
+.empty-state-card{text-align:center;padding:48px 32px;background:var(--white);border:2px dashed var(--gray-mid);border-radius:var(--r-lg);}
+.empty-state-icon{font-size:36px;display:block;margin-bottom:12px;}
+.empty-state-card h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.empty-state-card p{font-size:13px;color:var(--text-lt);max-width:400px;margin:0 auto 20px;line-height:1.65;}
+
+/* ── REVIEWS SECTION ── */
+.review-card{background:var(--white);border:1px solid var(--gray-mid);border-radius:var(--r-lg);padding:22px;}
+.review-card-stars{color:var(--orange);font-size:13px;margin-bottom:10px;letter-spacing:2px;}
+.review-card-text{font-size:14px;color:var(--text-md);line-height:1.7;margin-bottom:14px;}
+.review-card-author{display:flex;align-items:center;gap:10px;}
+.review-card-avatar{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.review-card-name{font-size:13px;font-weight:600;color:var(--text);}
+.review-card-service{font-size:11px;color:var(--text-lt);}
 .form-row input::placeholder,.form-row textarea::placeholder{color:rgba(255,255,255,.3);}
 .form-row textarea{resize:vertical;min-height:96px;}
 .form-submit{width:100%;padding:15px;background:var(--orange);color:var(--white);font-size:16px;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;margin-top:8px;transition:all .2s;}
