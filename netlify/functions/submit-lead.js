@@ -80,8 +80,12 @@ function httpRequest(options, body = null) {
 
 // ─── AIRTABLE ─────────────────────────────────────────────────
 async function airtableGet(table, formula) {
+  // IMPORTANTE: sin maxRecords=1 — necesitamos TODOS los proveedores que
+  // cumplan la condición para poder elegir uno al azar entre ellos. Con
+  // maxRecords=1, Airtable siempre devolvía el mismo (el más antiguo en
+  // la tabla), dejando sin leads a cualquier proveedor registrado después.
   const path = `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(table)}` +
-    `?filterByFormula=${encodeURIComponent(formula)}&maxRecords=1`;
+    `?filterByFormula=${encodeURIComponent(formula)}`;
   const res = await httpRequest({
     hostname: 'api.airtable.com',
     path,
@@ -175,16 +179,21 @@ function parseFormName(formName, explicitData) {
 // ─── FIND PROVIDER IN AIRTABLE ───────────────────────────────
 async function findProvider(service, commune) {
   const communeName = COMMUNE_NAMES[commune] || commune;
-  // Formula: proveedor activo que cubre ese servicio y esa comuna
+  // Formula: TODOS los proveedores activos que cubren ese servicio y esa comuna
   const formula = `AND(
     {active}=TRUE(),
     LOWER({service})="${service}",
     FIND("${communeName}",{communes})>0
   )`;
   const result = await airtableGet('providers', formula);
-  return result.records && result.records.length > 0
-    ? result.records[0]
-    : null;
+  if (!result.records || result.records.length === 0) return null;
+
+  // Reparto justo: si hay varios proveedores que cumplen, elegimos uno al
+  // azar en cada solicitud. Con volumen suficiente de leads, esto tiende
+  // a un reparto parejo entre todos — a diferencia de tomar siempre el
+  // primero, que le daría el 100% de los leads solo al más antiguo.
+  const idx = Math.floor(Math.random() * result.records.length);
+  return result.records[idx];
 }
 
 // ─── LOG LEAD ────────────────────────────────────────────────
